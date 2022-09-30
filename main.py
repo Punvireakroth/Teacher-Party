@@ -1,3 +1,4 @@
+from cmath import sin
 from queue import PriorityQueue
 
 class Graph:
@@ -92,9 +93,18 @@ D = g.dijkstra(0)
 for vertex in range(len(D)):
     print("From Teacher Sinet house to ", sinet_place[vertex], "is", D[vertex])
 
-print("============================================================================================")
 
-# Yuki calculation
+# Add data to a list
+sinet_list = []
+for vertex in range(len(D)):
+    assign = sinet_list.append(D[vertex])
+sinet_list.append(assign)
+sinet_list.pop()
+
+print("=================================================================================================")
+
+
+# Yuki distance
 
 y = Graph(16)
 
@@ -153,3 +163,78 @@ D = y.dijkstra(0)
 
 for vertex in range(len(D)):
     print("From Teacher Yuki house to ", yuki_place[vertex], "is", D[vertex])
+
+
+print("=================================================================================================")
+
+# Daro distance
+
+r = Graph(16)
+
+r.add_edge(0, 1, 10)
+r.add_edge(0, 11, 5)
+r.add_edge(0, 15, 9)
+r.add_edge(1, 0, 10)
+r.add_edge(1, 2, 5)
+r.add_edge(2, 1, 5)
+r.add_edge(2, 3, 6)
+r.add_edge(3, 2, 6)
+r.add_edge(3, 4, 8)
+r.add_edge(3, 15, 5)
+r.add_edge(4, 3, 8)
+r.add_edge(4, 5, 2)
+r.add_edge(5, 4, 2)
+r.add_edge(5, 6, 6)
+r.add_edge(5, 15, 4)
+r.add_edge(6, 5, 6)
+r.add_edge(6, 7, 5) 
+r.add_edge(6, 13, 5) 
+r.add_edge(7, 6, 5) 
+r.add_edge(7, 8, 4) 
+r.add_edge(7, 13, 4) 
+r.add_edge(8, 7, 4) 
+r.add_edge(8, 9, 6) 
+r.add_edge(8, 13, 5) 
+r.add_edge(8, 12, 9) 
+r.add_edge(9, 8, 6) 
+r.add_edge(9, 10, 5) 
+r.add_edge(10, 9, 5) 
+r.add_edge(10, 11, 2) 
+r.add_edge(10, 12, 2) 
+r.add_edge(11, 10, 2) 
+r.add_edge(11, 0, 5) 
+r.add_edge(11, 12, 3) 
+r.add_edge(12, 11, 3) 
+r.add_edge(12, 10, 2) 
+r.add_edge(12, 8, 9) 
+r.add_edge(12, 14, 7) 
+r.add_edge(13, 8, 5) 
+r.add_edge(13, 7, 4) 
+r.add_edge(13, 6, 5) 
+r.add_edge(13, 14, 6) 
+r.add_edge(14, 12, 7) 
+r.add_edge(14, 13, 6) 
+r.add_edge(14, 15, 6) 
+r.add_edge(15, 3, 5) 
+r.add_edge(15, 0, 9) 
+r.add_edge(15, 14, 6) 
+r.add_edge(15, 5, 4) 
+
+daro_place = ["His house", "AEON2", "Sensok", "Airport", "Sinet house", "Stoeng Meanchey", "K-Mall", "ISPP", "AEON3", "Yuki house", "AEON1", "Wat Phnom", "Boeng KengKong", "Wat Sonsom Kosal", "Spar Toul Tompong", "Toul Kok"]
+
+D = r.dijkstra(0)
+
+for vertex in range(len(D)):
+    print("From Teacher Daro house to ", daro_place[vertex], "is", D[vertex])
+print("=================================================================================================")
+
+# organize List is the list I take to compare all the three list with the same place t 
+organize_place = ["SinetHouse", "Airport", "Sensok", "AEON2", "DaroHouse", "WatPhnom", "AEON1", "BTP", "AEON3", "ISPP", "K-Mall", "StoengMeanchey", "ToulKok", "SparToulTompong", "Wat SonSomKosal", "BoengKengKong"]
+sinet_organize_list = sinet_list
+yuki_organize_list = [23,25,27,22,12,7,5,0,6,10,15,21,20,14,11,7]
+daro_organize_list = [15,14,15,10,0,5,7,12,17,21,19,13,9,15,21,8]
+
+print(organize_place)
+print(sinet_organize_list)
+print(yuki_organize_list)
+print(daro_organize_list)
