@@ -229,12 +229,19 @@ for vertex in range(len(D)):
 print("=================================================================================================")
 
 # organize List is the list I take to compare all the three list with the same place t 
-organize_place = ["SinetHouse", "Airport", "Sensok", "AEON2", "DaroHouse", "WatPhnom", "AEON1", "BTP", "AEON3", "ISPP", "K-Mall", "StoengMeanchey", "ToulKok", "SparToulTompong", "Wat SonSomKosal", "BoengKengKong"]
+organize_place = ["Teacher Sinet House", "Airport", "Sensok", "AEON2", "Teacher Daro House", "WatPhnom", "AEON1", "Teacher Yuki House", "AEON3", "ISPP", "K-Mall", "StoengMeanchey", "ToulKok", "Spar Toul Tompong", "Wat SonSomKosal", "BoengKengKong"]
 sinet_organize_list = sinet_list
 yuki_organize_list = [23,25,27,22,12,7,5,0,6,10,15,21,20,14,11,7]
 daro_organize_list = [15,14,15,10,0,5,7,12,17,21,19,13,9,15,21,8]
 
-print(organize_place)
-print(sinet_organize_list)
-print(yuki_organize_list)
-print(daro_organize_list)
+
+
+# Ref: https://stackoverflow.com/questions/16326853/enumerate-two-python-lists-simultaneously
+print("Based on the information teacher can have a party less than 16mn of commute time at: \n")
+
+for index, value in enumerate(zip(sinet_organize_list, yuki_organize_list, daro_organize_list)):
+    if((value[0]<=15) and (value[1]<=15) and (value[2]<=15)):
+        print(organize_place[index])
+        print(f" Teacher Sinet drive {value[0]}mn\n Teacher yuki drive {value[1]}mn\n Teacher Daro drive {value[2]}mn")
+print("=================================================================================================")
+
