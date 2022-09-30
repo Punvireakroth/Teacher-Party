@@ -29,10 +29,8 @@ class Graph:
                         new_cost = D[current_vertex] + distance
                         if new_cost < old_cost:
                             pq.put((new_cost, neighbor))
-                            D[neighbor] = new_cost
-        
+                            D[neighbor] = new_cost    
         return D
-
 
 g = Graph(16)
 # លេខរៀង / ទៅណា / មានweightប៉ុន្មាន 
@@ -94,3 +92,64 @@ D = g.dijkstra(0)
 for vertex in range(len(D)):
     print("From Teacher Sinet house to ", sinet_place[vertex], "is", D[vertex])
 
+print("============================================================================================")
+
+# Yuki calculation
+
+y = Graph(16)
+
+y.add_edge(0, 1, 5)
+y.add_edge(0, 11, 6)
+y.add_edge(1, 2, 2)
+y.add_edge(1, 15, 2)
+y.add_edge(1, 0, 5)
+y.add_edge(2, 1, 2)
+y.add_edge(2, 3, 5)
+y.add_edge(2, 15, 3)
+y.add_edge(3, 2, 5)
+y.add_edge(3, 4, 10)
+y.add_edge(3, 12, 9)
+y.add_edge(4, 3, 10)
+y.add_edge(4, 5, 5)
+y.add_edge(5, 4, 5)
+y.add_edge(5, 6, 6)
+y.add_edge(6, 5, 6)
+y.add_edge(6, 7, 8) 
+y.add_edge(6, 14, 5) 
+y.add_edge(7, 6, 8) 
+y.add_edge(7, 8, 2) 
+y.add_edge(8, 7, 2) 
+y.add_edge(8, 9, 6) 
+y.add_edge(8, 14, 4) 
+y.add_edge(9, 8, 6) 
+y.add_edge(9, 10, 5) 
+y.add_edge(9, 12, 5) 
+y.add_edge(10, 9, 5) 
+y.add_edge(10, 11, 4) 
+y.add_edge(10, 12, 4) 
+y.add_edge(11, 10, 4) 
+y.add_edge(11, 0, 6) 
+y.add_edge(11, 12, 5) 
+y.add_edge(11, 15, 9) 
+y.add_edge(12, 13, 6) 
+y.add_edge(12, 9, 5) 
+y.add_edge(12, 10, 4) 
+y.add_edge(12, 11, 5) 
+y.add_edge(13, 12, 6) 
+y.add_edge(13, 14, 6) 
+y.add_edge(13, 15, 7) 
+y.add_edge(14, 6, 5) 
+y.add_edge(14, 8, 4) 
+y.add_edge(14, 3, 9) 
+y.add_edge(14, 13, 6) 
+y.add_edge(15, 11, 9) 
+y.add_edge(15, 2, 3) 
+y.add_edge(15, 1, 2) 
+y.add_edge(15, 13, 7) 
+
+yuki_place = ["His House", "AEON1", "Wat Phnom", "Daro House", "AEON2", "Sensok", "Airport", "Sinet house", "Stoeng MeanChey", "K-mall", "ISPP", "AEON3", "Wat Sonsomkosal", "Spar ToulTompong", "Toul Kork", "Boeng KengKong"]
+
+D = y.dijkstra(0)
+
+for vertex in range(len(D)):
+    print("From Teacher Yuki house to ", yuki_place[vertex], "is", D[vertex])
