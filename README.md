@@ -18,3 +18,12 @@ The travel’s time is indicated in the diagram.
 <img src="./media/NetworkModeling.jpg"
      alt="my note"
      style="float: left; margin-right: 10px; width:800px display:block" />
+
+## Output
+
+<img src="./media/output1.png"
+     alt="output1"
+     style="float: left; margin-right: 10px; width:800px display:block" />
+<img src="./media/output2.png"
+     alt="output2"
+     style="float: left; margin-right: 10px; width:800px display:block" />
